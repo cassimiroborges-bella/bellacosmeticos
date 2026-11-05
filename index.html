@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Loja de cosméticos com produtos para maquiagem, pele e cabelo."
+  >
+  <title>Essenza Cosméticos</title>
+
+  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link
+    href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap)"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="cabecalho">
+    <a href="#" class="logo">Essenza<span>.</span></a>
+
+    <nav class="navegacao" aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <a href="#produtos" class="sacola" aria-label="Ir para os produtos">
+      Sacola <span>0</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-conteudo">
+        <span class="etiqueta">Sua beleza, sua essência</span>
+
+        <h1>Cuidados que realçam a sua beleza natural.</h1>
+
+        <p>
+          Cosméticos selecionados para transformar sua rotina de beleza,
+          com qualidade, delicadeza e preços especiais.
+        </p>
+
+        <div class="hero-acoes">
+          <a href="#produtos" class="botao botao-principal">
+            Ver produtos
+          </a>
+
+          <a href="#categorias" class="botao botao-secundario">
+            Explorar categorias
+          </a>
+        </div>
+
+        <div class="beneficios">
+          <span>✓ Compra segura</span>
+          <span>✓ Produtos selecionados</span>
+          <span>✓ Envio para todo o Brasil</span>
+        </div>
+      </div>
+
+      <div class="hero-imagem">
+        <div class="circulo-decorativo"></div>
+
+        <img
+          src="[images.unsplash.com](https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1000&q=85)"
+          alt="Produtos de maquiagem e cosméticos"
+        >
+
+        <div class="cartao-flutuante">
+          <strong>20% OFF</strong>
+          <span>na primeira compra</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao categorias" id="categorias">
+      <div class="titulo-secao">
+        <span>Encontre o que você precisa</span>
+        <h2>Compre por categoria</h2>
+      </div>
+
+      <div class="grade-categorias">
+        <a href="#produtos" class="categoria">
+          <span class="icone">✦</span>
+          <strong>Maquiagem</strong>
+          <small>Realce sua beleza</small>
+        </a>
+
+        <a href="#produtos" class="categoria">
+          <span class="icone">♡</span>
+          <strong>Cuidados com a pele</strong>
+          <small>Rotina de autocuidado</small>
+        </a>
+
+        <a href="#produtos" class="categoria">
+          <span class="icone">❀</span>
+          <strong>Perfumes</strong>
+          <small>Fragrâncias marcantes</small>
+        </a>
+
+        <a href="#produtos" class="categoria">
+          <span class="icone">⌁</span>
+          <strong>Cabelos</strong>
+          <small>Brilho e hidratação</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="secao produtos" id="produtos">
+      <div class="cabecalho-secao">
+        <div class="titulo-secao alinhado-esquerda">
+          <span>Os queridinhos da loja</span>
+          <h2>Produtos em destaque</h2>
+        </div>
+
+        <a href="#produtos" class="ver-todos">Ver todos →</a>
+      </div>
+
+      <div class="grade-produtos">
+        <article class="produto">
+          <div class="produto-imagem">
+            <span class="selo">Mais vendido</span>
+            <button class="favorito" aria-label="Adicionar Sérum Facial aos favoritos">
+              ♡
+            </button>
+
+            <img
+              src="[images.unsplash.com](https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=85)"
+              alt="Frasco de sérum facial"
+            >
+          </div>
+
+          <div class="produto-info">
+            <small>Skincare</small>
+            <h3>Sérum Facial Vitamina C</h3>
+            <p>Ilumina, hidrata e uniformiza o tom da pele.</p>
+
+            <div class="avaliacao" aria-label="Avaliação 4,9 de 5">
+              ★★★★★ <span>(126)</span>
+            </div>
+
+            <div class="produto-rodape">
+              <div class="preco">
+                <del>R$ 79,90</del>
+                <strong>R$ 59,90</strong>
+                <small>ou 3x de R$ 19,97</small>
+              </div>
+
+              <button class="adicionar" aria-label="Adicionar Sérum Facial à sacola">
+                +
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="produto-imagem">
+            <span class="selo novo">Novo</span>
+            <button class="favorito" aria-label="Adicionar Batom Matte aos favoritos">
+              ♡
+            </button>
+
+            <img
+              src="[images.unsplash.com](https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=700&q=85)"
+              alt="Batom em tom vermelho"
+            >
+          </div>
+
+          <div class="produto-info">
+            <small>Maquiagem</small>
+            <h3>Batom Matte Velvet</h3>
+            <p>Cor intensa, textura confortável e longa duração.</p>
+
+            <div class="avaliacao" aria-label="Avaliação 4,8 de 5">
+              ★★★★★ <span>(89)</span>
+            </div>
+
+            <div class="produto-rodape">
+              <div class="preco">
+                <strong>R$ 39,90</strong>
+                <small>ou 2x de R$ 19,95</small>
+              </div>
+
+              <button class="adicionar" aria-label="Adicionar Batom Matte à sacola">
+                +
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="produto-imagem">
+            <span class="selo">15% OFF</span>
+            <button class="favorito" aria-label="Adicionar Perfume Floral aos favoritos">
+              ♡
+            </button>
+
+            <img
+              src="[images.unsplash.com](https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=85)"
+              alt="Frasco elegante de perfume"
+            >
+          </div>
+
+          <div class="produto-info">
+            <small>Perfumaria</small>
+            <h3>Perfume Floral Lumière</h3>
+            <p>Fragrância floral sofisticada, delicada e envolvente.</p>
+
+            <div class="avaliacao" aria-label="Avaliação 4,9 de 5">
+              ★★★★★ <span>(204)</span>
+            </div>
+
+            <div class="produto-rodape">
+              <div class="preco">
+                <del>R$ 149,90</del>
+                <strong>R$ 127,40</strong>
+                <small>ou 6x de R$ 21,23</small>
+              </div>
+
+              <button class="adicionar" aria-label="Adicionar Perfume Floral à sacola">
+                +
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="produto-imagem">
+            <button class="favorito" aria-label="Adicionar Máscara Capilar aos favoritos">
+              ♡
+            </button>
+
+            <img
+              src="[images.unsplash.com](https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=85)"
+              alt="Produto cosmético para hidratação"
+            >
+          </div>
+
+          <div class="produto-info">
+            <small>Cabelos</small>
+            <h3>Máscara Capilar Nutritiva</h3>
+            <p>Nutrição profunda para cabelos macios e brilhantes.</p>
+
+            <div class="avaliacao" aria-label="Avaliação 4,7 de 5">
+              ★★★★★ <span>(73)</span>
+            </div>
+
+            <div class="produto-rodape">
+              <div class="preco">
+                <strong>R$ 54,90</strong>
+                <small>ou 3x de R$ 18,30</small>
+              </div>
+
+              <button class="adicionar" aria-label="Adicionar Máscara Capilar à sacola">
+                +
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="newsletter" id="contato">
+      <div>
+        <span class="etiqueta">Clube Essenza</span>
+        <h2>Receba novidades e ofertas especiais</h2>
+        <p>
+          Cadastre seu e-mail e ganhe 10% de desconto na primeira compra.
+        </p>
+      </div>
+
+      <form class="formulario">
+        <label for="email" class="visualmente-oculto">Seu melhor e-mail</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Seu melhor e-mail"
+          required
+        >
+        <button type="submit">Quero meu desconto</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div>
+      <a href="#" class="logo">Essenza<span>.</span></a>
+      <p>Beleza, cuidado e autoestima em cada detalhe.</p>
+    </div>
+
+    <div>
+      <strong>Institucional</strong>
+      <a href="#">Sobre nós</a>
+      <a href="#">Política de privacidade</a>
+      <a href="#">Trocas e devoluções</a>
+    </div>
+
+    <div>
+      <strong>Atendimento</strong>
+      <a href="mailto:contato@essenza.com">contato@essenza.com</a>
+      <a href="tel:+5511999999999">(11) 99999-9999</a>
+      <span>Seg. a sex., das 9h às 18h</span>
+    </div>
+  </footer>
+
+  <div class="direitos">
+    © 2026 Essenza Cosméticos. Todos os direitos reservados.
+  </div>
+</body>
+</html>
