@@ -1,316 +1,638 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta
-    name="description"
-    content="Loja de cosméticos com produtos para maquiagem, pele e cabelo."
-  >
-  <title>Essenza Cosméticos</title>
+  <title>Bella Vita · Cosméticos</title>
+  <!-- Fontes e ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link
-    href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap)"
-    rel="stylesheet"
-  >
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fef9f7;
+      color: #2e2e2e;
+      line-height: 1.5;
+    }
 
-  <link rel="stylesheet" href="style.css">
+    /* Layout principal */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Cabeçalho */
+    header {
+      background-color: #fff4f0;
+      border-bottom: 1px solid #f0d9d2;
+      padding: 1rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo i {
+      font-size: 1.8rem;
+      color: #c98b7a;
+    }
+
+    .logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 1.9rem;
+      letter-spacing: -0.5px;
+      color: #4a2e2a;
+    }
+
+    .logo span {
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: #b48a7e;
+      margin-left: 0.25rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      font-weight: 500;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4a2e2a;
+      font-size: 1rem;
+      transition: color 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.25rem;
+    }
+
+    nav a:hover {
+      color: #b27a6b;
+      border-bottom-color: #e3b7ab;
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 1.3rem;
+      color: #6b4e47;
+    }
+
+    .header-icons i {
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .header-icons i:hover {
+      color: #c98b7a;
+    }
+
+    /* Banner hero */
+    .hero {
+      background: linear-gradient(135deg, #f9e7e2 0%, #fef4f0 100%);
+      padding: 3rem 0;
+      margin-bottom: 2rem;
+      border-radius: 0 0 3rem 3rem;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1 1 300px;
+    }
+
+    .hero-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: #3e2a26;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h2 i {
+      color: #c98b7a;
+      font-size: 2rem;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #63504a;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+
+    .btn-hero {
+      display: inline-block;
+      background-color: #b27a6b;
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 3rem;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 8px 18px -6px rgba(178, 122, 107, 0.4);
+    }
+
+    .btn-hero:hover {
+      background-color: #9e6455;
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 2rem;
+      box-shadow: 0 25px 30px -15px rgba(120, 70, 60, 0.2);
+    }
+
+    /* Seção de produtos */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #3e2a26;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title i {
+      color: #c98b7a;
+      font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+      color: #8b6e65;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+      border-left: 4px solid #e3b7ab;
+      padding-left: 1rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 4rem;
+    }
+
+    /* Card de produto */
+    .product-card {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 1.5rem 1.2rem 1.8rem;
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+      text-align: center;
+      border: 1px solid #f7e4de;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 30px -10px rgba(170, 120, 100, 0.25);
+      border-color: #e3b7ab;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 0.8rem;
+      right: 1rem;
+      background: #f7e3dc;
+      color: #8b4e3d;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2rem;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+      background: #fdf2ee;
+      border-radius: 2rem;
+      font-size: 4rem;
+      color: #b27a6b;
+      transition: background 0.2s;
+    }
+
+    .product-card:hover .product-img {
+      background: #fae9e2;
+    }
+
+    .product-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #35221e;
+      margin: 0.5rem 0 0.25rem;
+    }
+
+    .product-desc {
+      font-size: 0.9rem;
+      color: #7a625a;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+      padding: 0 0.3rem;
+    }
+
+    .price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #9b5e4c;
+      margin: 0.5rem 0 1rem;
+      letter-spacing: -0.5px;
+    }
+
+    .price small {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #b48a7e;
+    }
+
+    .btn-add {
+      background: transparent;
+      border: 1.5px solid #dbb6ab;
+      color: #7b4e40;
+      padding: 0.7rem 1.8rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    .btn-add i {
+      font-size: 1rem;
+    }
+
+    .btn-add:hover {
+      background: #c98b7a;
+      border-color: #c98b7a;
+      color: white;
+    }
+
+    /* Depoimento / personalização extra */
+    .testimonial {
+      background: #fff4f0;
+      border-radius: 3rem;
+      padding: 2rem 2.5rem;
+      margin: 3rem 0 4rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      border: 1px solid #f0d9d2;
+    }
+
+    .testimonial-text {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-text i {
+      font-size: 2.8rem;
+      color: #dbb6ab;
+    }
+
+    .testimonial-text p {
+      font-size: 1.15rem;
+      font-style: italic;
+      color: #4a2e2a;
+      max-width: 600px;
+    }
+
+    .testimonial-text span {
+      display: block;
+      font-style: normal;
+      font-weight: 600;
+      margin-top: 0.4rem;
+      color: #b27a6b;
+    }
+
+    .personalize-icon {
+      display: flex;
+      gap: 0.8rem;
+      font-size: 1.6rem;
+      color: #b27a6b;
+    }
+
+    /* Rodapé */
+    footer {
+      background: #2e2220;
+      color: #e3cec7;
+      padding: 2.5rem 0 1.5rem;
+      border-radius: 3rem 3rem 0 0;
+      margin-top: 2rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .footer-logo i {
+      font-size: 1.6rem;
+      color: #c98b7a;
+      margin-right: 0.5rem;
+    }
+
+    .footer-logo h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: 1.6rem;
+      display: inline;
+      color: #f7e4de;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #cbb2a9;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #f7e4de;
+    }
+
+    .social i {
+      font-size: 1.3rem;
+      margin-left: 1rem;
+      color: #cbb2a9;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    .social i:hover {
+      color: #e3b7ab;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #4a3732;
+      font-size: 0.85rem;
+      color: #a7867b;
+    }
+
+    /* Responsividade */
+    @media (max-width: 700px) {
+      .header-content {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+
+      .header-icons {
+        justify-content: center;
+      }
+
+      .hero-text h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .testimonial {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .testimonial-text {
+        flex-direction: column;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <header class="cabecalho">
-    <a href="#" class="logo">Essenza<span>.</span></a>
-
-    <nav class="navegacao" aria-label="Navegação principal">
-      <a href="#inicio">Início</a>
-      <a href="#produtos">Produtos</a>
-      <a href="#categorias">Categorias</a>
-      <a href="#contato">Contato</a>
-    </nav>
-
-    <a href="#produtos" class="sacola" aria-label="Ir para os produtos">
-      Sacola <span>0</span>
-    </a>
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <i class="fas fa-seedling"></i>
+        <h1>Bella Vita <span>cosméticos</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Produtos</a></li>
+          <li><a href="#">Novidades</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-shopping-bag"></i>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
-      <div class="hero-conteudo">
-        <span class="etiqueta">Sua beleza, sua essência</span>
-
-        <h1>Cuidados que realçam a sua beleza natural.</h1>
-
-        <p>
-          Cosméticos selecionados para transformar sua rotina de beleza,
-          com qualidade, delicadeza e preços especiais.
-        </p>
-
-        <div class="hero-acoes">
-          <a href="#produtos" class="botao botao-principal">
-            Ver produtos
-          </a>
-
-          <a href="#categorias" class="botao botao-secundario">
-            Explorar categorias
-          </a>
+    <!-- Banner principal -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h2>Beleza que <br>floresce <i class="fas fa-spa"></i></h2>
+          <p>Descubra cosméticos artesanais feitos com ingredientes naturais, cuidadosamente personalizados para realçar a sua essência.</p>
+          <a href="#" class="btn-hero">explorar coleção <i class="fas fa-arrow-right"></i></a>
         </div>
-
-        <div class="beneficios">
-          <span>✓ Compra segura</span>
-          <span>✓ Produtos selecionados</span>
-          <span>✓ Envio para todo o Brasil</span>
-        </div>
-      </div>
-
-      <div class="hero-imagem">
-        <div class="circulo-decorativo"></div>
-
-        <img
-          src="[images.unsplash.com](https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1000&q=85)"
-          alt="Produtos de maquiagem e cosméticos"
-        >
-
-        <div class="cartao-flutuante">
-          <strong>20% OFF</strong>
-          <span>na primeira compra</span>
+        <div class="hero-image">
+          <!-- Imagem ilustrativa com gradiente e ícone (sem dependência externa) -->
+          <div style="background: linear-gradient(145deg, #e8cfc6, #f5e3db); width: 280px; height: 280px; margin: 0 auto; border-radius: 2rem; display: flex; align-items: center; justify-content: center; font-size: 7rem; color: #b27a6b; box-shadow: 0 20px 30px -10px rgba(120,70,60,0.2);">
+            <i class="fas fa-gem"></i>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="secao categorias" id="categorias">
-      <div class="titulo-secao">
-        <span>Encontre o que você precisa</span>
-        <h2>Compre por categoria</h2>
-      </div>
+    <!-- Produtos personalizados -->
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-star"></i> Nossos produtos</h2>
+      <p class="section-subtitle">Fórmulas exclusivas, texturas sensoriais e embalagens pensadas para você.</p>
 
-      <div class="grade-categorias">
-        <a href="#produtos" class="categoria">
-          <span class="icone">✦</span>
-          <strong>Maquiagem</strong>
-          <small>Realce sua beleza</small>
-        </a>
-
-        <a href="#produtos" class="categoria">
-          <span class="icone">♡</span>
-          <strong>Cuidados com a pele</strong>
-          <small>Rotina de autocuidado</small>
-        </a>
-
-        <a href="#produtos" class="categoria">
-          <span class="icone">❀</span>
-          <strong>Perfumes</strong>
-          <small>Fragrâncias marcantes</small>
-        </a>
-
-        <a href="#produtos" class="categoria">
-          <span class="icone">⌁</span>
-          <strong>Cabelos</strong>
-          <small>Brilho e hidratação</small>
-        </a>
-      </div>
-    </section>
-
-    <section class="secao produtos" id="produtos">
-      <div class="cabecalho-secao">
-        <div class="titulo-secao alinhado-esquerda">
-          <span>Os queridinhos da loja</span>
-          <h2>Produtos em destaque</h2>
+      <div class="products-grid">
+        <!-- Produto 1 -->
+        <div class="product-card">
+          <div class="product-badge">novo</div>
+          <div class="product-img"><i class="fas fa-pump-soap"></i></div>
+          <h3>Sérum Facial</h3>
+          <p class="product-desc">Vitamina C + ácido hialurônico · 30ml</p>
+          <div class="price">R$ 129,90</div>
+          <button class="btn-add"><i class="fas fa-plus"></i> adicionar</button>
         </div>
 
-        <a href="#produtos" class="ver-todos">Ver todos →</a>
+        <!-- Produto 2 -->
+        <div class="product-card">
+          <div class="product-badge">bestseller</div>
+          <div class="product-img"><i class="fas fa-lips"></i></div>
+          <h3>Batom Matte</h3>
+          <p class="product-desc">Longa duração · Rosa antigo</p>
+          <div class="price">R$ 59,90</div>
+          <button class="btn-add"><i class="fas fa-plus"></i> adicionar</button>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="product-card">
+          <div class="product-img"><i class="fas fa-brush"></i></div>
+          <h3>Paleta de Sombras</h3>
+          <p class="product-desc">12 tons neutros e cintilantes</p>
+          <div class="price">R$ 189,90</div>
+          <button class="btn-add"><i class="fas fa-plus"></i> adicionar</button>
+        </div>
+
+        <!-- Produto 4 -->
+        <div class="product-card">
+          <div class="product-badge">vegano</div>
+          <div class="product-img"><i class="fas fa-spray-can"></i></div>
+          <h3>Água Micelar</h3>
+          <p class="product-desc">Limpeza suave · 200ml</p>
+          <div class="price">R$ 47,90</div>
+          <button class="btn-add"><i class="fas fa-plus"></i> adicionar</button>
+        </div>
+
+        <!-- Produto 5 -->
+        <div class="product-card">
+          <div class="product-img"><i class="fas fa-hand-sparkles"></i></div>
+          <h3>Óleo Corporal</h3>
+          <p class="product-desc">Amêndoas + baunilha · 100ml</p>
+          <div class="price">R$ 89,90</div>
+          <button class="btn-add"><i class="fas fa-plus"></i> adicionar</button>
+        </div>
+
+        <!-- Produto 6 -->
+        <div class="product-card">
+          <div class="product-badge">personalizável</div>
+          <div class="product-img"><i class="fas fa-palette"></i></div>
+          <h3>Kit Personalize</h3>
+          <p class="product-desc">Monte sua nécessaire com 3 itens</p>
+          <div class="price">R$ 199,90 <small>/kit</small></div>
+          <button class="btn-add"><i class="fas fa-magic"></i> montar</button>
+        </div>
       </div>
 
-      <div class="grade-produtos">
-        <article class="produto">
-          <div class="produto-imagem">
-            <span class="selo">Mais vendido</span>
-            <button class="favorito" aria-label="Adicionar Sérum Facial aos favoritos">
-              ♡
-            </button>
-
-            <img
-              src="[images.unsplash.com](https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=85)"
-              alt="Frasco de sérum facial"
-            >
-          </div>
-
-          <div class="produto-info">
-            <small>Skincare</small>
-            <h3>Sérum Facial Vitamina C</h3>
-            <p>Ilumina, hidrata e uniformiza o tom da pele.</p>
-
-            <div class="avaliacao" aria-label="Avaliação 4,9 de 5">
-              ★★★★★ <span>(126)</span>
-            </div>
-
-            <div class="produto-rodape">
-              <div class="preco">
-                <del>R$ 79,90</del>
-                <strong>R$ 59,90</strong>
-                <small>ou 3x de R$ 19,97</small>
-              </div>
-
-              <button class="adicionar" aria-label="Adicionar Sérum Facial à sacola">
-                +
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <article class="produto">
-          <div class="produto-imagem">
-            <span class="selo novo">Novo</span>
-            <button class="favorito" aria-label="Adicionar Batom Matte aos favoritos">
-              ♡
-            </button>
-
-            <img
-              src="[images.unsplash.com](https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=700&q=85)"
-              alt="Batom em tom vermelho"
-            >
-          </div>
-
-          <div class="produto-info">
-            <small>Maquiagem</small>
-            <h3>Batom Matte Velvet</h3>
-            <p>Cor intensa, textura confortável e longa duração.</p>
-
-            <div class="avaliacao" aria-label="Avaliação 4,8 de 5">
-              ★★★★★ <span>(89)</span>
-            </div>
-
-            <div class="produto-rodape">
-              <div class="preco">
-                <strong>R$ 39,90</strong>
-                <small>ou 2x de R$ 19,95</small>
-              </div>
-
-              <button class="adicionar" aria-label="Adicionar Batom Matte à sacola">
-                +
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <article class="produto">
-          <div class="produto-imagem">
-            <span class="selo">15% OFF</span>
-            <button class="favorito" aria-label="Adicionar Perfume Floral aos favoritos">
-              ♡
-            </button>
-
-            <img
-              src="[images.unsplash.com](https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=85)"
-              alt="Frasco elegante de perfume"
-            >
-          </div>
-
-          <div class="produto-info">
-            <small>Perfumaria</small>
-            <h3>Perfume Floral Lumière</h3>
-            <p>Fragrância floral sofisticada, delicada e envolvente.</p>
-
-            <div class="avaliacao" aria-label="Avaliação 4,9 de 5">
-              ★★★★★ <span>(204)</span>
-            </div>
-
-            <div class="produto-rodape">
-              <div class="preco">
-                <del>R$ 149,90</del>
-                <strong>R$ 127,40</strong>
-                <small>ou 6x de R$ 21,23</small>
-              </div>
-
-              <button class="adicionar" aria-label="Adicionar Perfume Floral à sacola">
-                +
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <article class="produto">
-          <div class="produto-imagem">
-            <button class="favorito" aria-label="Adicionar Máscara Capilar aos favoritos">
-              ♡
-            </button>
-
-            <img
-              src="[images.unsplash.com](https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=85)"
-              alt="Produto cosmético para hidratação"
-            >
-          </div>
-
-          <div class="produto-info">
-            <small>Cabelos</small>
-            <h3>Máscara Capilar Nutritiva</h3>
-            <p>Nutrição profunda para cabelos macios e brilhantes.</p>
-
-            <div class="avaliacao" aria-label="Avaliação 4,7 de 5">
-              ★★★★★ <span>(73)</span>
-            </div>
-
-            <div class="produto-rodape">
-              <div class="preco">
-                <strong>R$ 54,90</strong>
-                <small>ou 3x de R$ 18,30</small>
-              </div>
-
-              <button class="adicionar" aria-label="Adicionar Máscara Capilar à sacola">
-                +
-              </button>
-            </div>
-          </div>
-        </article>
+      <!-- Área de personalização extra (toque especial) -->
+      <div class="testimonial">
+        <div class="testimonial-text">
+          <i class="fas fa-quote-left"></i>
+          <p>“Amei a possibilidade de personalizar meu kit! Recebi tudo com meu nome gravado e essência preferida.” <span>— Marina S.</span></p>
+        </div>
+        <div class="personalize-icon">
+          <i class="fas fa-feather-alt"></i>
+          <i class="fas fa-gift"></i>
+          <i class="fas fa-heart"></i>
+        </div>
       </div>
-    </section>
-
-    <section class="newsletter" id="contato">
-      <div>
-        <span class="etiqueta">Clube Essenza</span>
-        <h2>Receba novidades e ofertas especiais</h2>
-        <p>
-          Cadastre seu e-mail e ganhe 10% de desconto na primeira compra.
-        </p>
-      </div>
-
-      <form class="formulario">
-        <label for="email" class="visualmente-oculto">Seu melhor e-mail</label>
-        <input
-          id="email"
-          type="email"
-          placeholder="Seu melhor e-mail"
-          required
-        >
-        <button type="submit">Quero meu desconto</button>
-      </form>
-    </section>
+    </div>
   </main>
 
-  <footer class="rodape">
-    <div>
-      <a href="#" class="logo">Essenza<span>.</span></a>
-      <p>Beleza, cuidado e autoestima em cada detalhe.</p>
-    </div>
-
-    <div>
-      <strong>Institucional</strong>
-      <a href="#">Sobre nós</a>
-      <a href="#">Política de privacidade</a>
-      <a href="#">Trocas e devoluções</a>
-    </div>
-
-    <div>
-      <strong>Atendimento</strong>
-      <a href="mailto:contato@essenza.com">contato@essenza.com</a>
-      <a href="tel:+5511999999999">(11) 99999-9999</a>
-      <span>Seg. a sex., das 9h às 18h</span>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-seedling"></i>
+          <h2>Bella Vita</h2>
+        </div>
+        <div class="footer-links">
+          <a href="#">Sobre nós</a>
+          <a href="#">Política de privacidade</a>
+          <a href="#">Trocas e devoluções</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="social">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-tiktok"></i>
+          <i class="fab fa-whatsapp"></i>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2025 Bella Vita Cosméticos — Beleza autêntica e personalizada.
+      </div>
     </div>
   </footer>
-
-  <div class="direitos">
-    © 2026 Essenza Cosméticos. Todos os direitos reservados.
-  </div>
 </body>
 </html>
